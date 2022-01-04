@@ -10,4 +10,6 @@ public class UniversityApplication {
         SpringApplication.run(UniversityApplication.class, args);
     }
 
+
+
 }
