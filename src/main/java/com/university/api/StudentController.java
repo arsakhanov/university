@@ -24,9 +24,19 @@ public class StudentController {
         return studentService.getAll();
     }
 
-    @PostMapping("addStudent")
+    @PostMapping("/addStudent")
     public void addStudent(@RequestBody Student student){
         studentService.createStudent(student);
+    }
+
+    @PatchMapping("/updateStudent")
+    public Student updateStudent(@RequestParam Long id, @RequestBody Student student){
+       return studentService.updateStudent(id, student);
+    }
+
+    @DeleteMapping("/deleteStudent")
+    public void deleteStudent(@RequestParam Long id){
+        studentService.deleteStudent(id);
     }
 
 }

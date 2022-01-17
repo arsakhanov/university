@@ -25,9 +25,9 @@ public class StudentServiceImpl implements StudentService {
         return studentRepository.save(student);
     }
 
-    public Student updateStudent(Long studentId, String surname) {
+    public Student updateStudent(Long studentId, Student student) {
         Student newStudent = studentRepository.findById(studentId).orElseThrow();
-        newStudent.setSurname(surname);
+        newStudent.setSurname(student.getSurname());
         return studentRepository.save(newStudent);
     }
 

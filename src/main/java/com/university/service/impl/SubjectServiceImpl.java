@@ -26,9 +26,9 @@ public class SubjectServiceImpl implements SubjectService {
     }
 
     @Override
-    public Subject updateSubject(Long subjectId, String name) {
+    public Subject updateSubject(Long subjectId, Subject subject) {
         Subject newSubject = subjectRepository.findById(subjectId).orElseThrow();
-        newSubject.setName(name);
+        newSubject.setName(subject.getName());
         return subjectRepository.save(newSubject);
     }
 
@@ -36,4 +36,5 @@ public class SubjectServiceImpl implements SubjectService {
     public void deleteSubject(Long subjectId) {
         subjectRepository.deleteById(subjectId);
     }
+
 }

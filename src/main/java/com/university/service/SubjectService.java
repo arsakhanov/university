@@ -11,7 +11,7 @@ public interface SubjectService {
 
     Subject createSubject(Subject subject);
 
-    Subject updateSubject(Long subjectId, String name);
+    Subject updateSubject(Long subjectId, Subject subject);
 
     void deleteSubject(Long subjectId);
 
