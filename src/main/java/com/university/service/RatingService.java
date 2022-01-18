@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface RatingService {
 
-    CourseRating addRating(String surname, String name, int rating);
+    void addRating(String surname, String name, int rating);
 
     List<CourseRating> getAll();
 }

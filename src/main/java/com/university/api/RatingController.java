@@ -21,7 +21,7 @@ public class RatingController {
     }
 
     @PostMapping(value = "/addRating")
-    public CourseRating addRating(@RequestParam String surname, @RequestParam String name, @RequestParam int rating){
-       return ratingService.addRating(surname, name, rating);
+    public void addRating(@RequestParam String surname, @RequestParam String name, @RequestParam int rating){
+        ratingService.addRating(surname, name, rating);
     }
 }

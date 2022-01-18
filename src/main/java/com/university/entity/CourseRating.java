@@ -1,5 +1,7 @@
 package com.university.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -16,11 +18,11 @@ public class CourseRating {
 
     @ManyToOne
     @JoinColumn(name = "student_id")
-    Student student;
+    private Student student;
 
     @ManyToOne
     @JoinColumn(name = "subject_id")
-    Subject subject;
+    private Subject subject;
 
     private int rating;
 }

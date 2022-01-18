@@ -25,14 +25,14 @@ public class RatingServiceImpl implements RatingService {
     }
 
     @Override
-    public CourseRating addRating(String surname, String name, int rating) {
+    public void addRating(String surname, String name, int rating) {
         Student student = studentRepository.findBySurname(surname);
         Subject subject = subjectRepository.findByName(name);
         CourseRating courseRating = new CourseRating();
         courseRating.setStudent(student);
         courseRating.setSubject(subject);
         courseRating.setRating(rating);
-        return ratingRepository.save(courseRating);
+        ratingRepository.save(courseRating);
     }
 
     @Override
